@@ -1,46 +1,15 @@
-def caesar_cipher(text, shift, mode):
-    result = ""
-    for char in text:
-        if char.isalpha():  # Check if the character is an alphabet
-            shifted = ord(char) + shift if mode == "encrypt" else ord(char) - shift
-            if char.islower():
-                if mode == "encrypt":
-                    if shifted > ord('z'):
-                        shifted -= 26
-                    elif shifted < ord('a'):
-                        shifted += 26
-                else:
-                    if shifted > ord('z'):
-                        shifted -= 26
-                    elif shifted < ord('a'):
-                        shifted += 26
-            elif char.isupper():
-                if mode == "encrypt":
-                    if shifted > ord('Z'):
-                        shifted -= 26
-                    elif shifted < ord('A'):
-                        shifted += 26
-                else:
-                    if shifted > ord('Z'):
-                        shifted -= 26
-                    elif shifted < ord('A'):
-                        shifted += 26
-            result += chr(shifted)
-        else:
-            result += char
-    return result
+Description:
+This Python program offers a versatile implementation of the Caesar cipher, empowering users to encrypt or decrypt text with a custom shift value. It provides a user-friendly interface, prompting for input text, shift value, and the desired operation (encryption or decryption) via the command line.
 
-# Get input from user
-text = input("Enter the text: ")
-shift = int(input("Enter the shift value: "))
-choice = input("Encrypt or Decrypt? (Type 'encrypt' or 'decrypt'): ")
+Requirements:
+Python 3.x installed on the user's system.
 
-# Validate user's choice
-if choice.lower() == "encrypt":
-    encrypted_text = caesar_cipher(text, shift, "encrypt")
-    print("Encrypted text:", encrypted_text)
-elif choice.lower() == "decrypt":
-    decrypted_text = caesar_cipher(text, shift, "decrypt")
-    print("Decrypted text:", decrypted_text)
-else:
-    print("Invalid choice. Please enter 'encrypt' or 'decrypt'.")
+Using Software:
+Python interpreter for running the program. Text editor or IDE for code modification and execution.
+
+Usage Paradigm:
+1. Run the program in a Python environment.
+2. Follow the prompts to input the text to be processed.
+3. Enter the shift value, specifying the amount of shift for encryption/decryption.
+4. Choose between encryption or decryption.
+5. View the encrypted or decrypted text as output, depending on the selected operation.
